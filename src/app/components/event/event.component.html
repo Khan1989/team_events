@@ -1,3 +1,6 @@
-<div class="event-container">
-    <h2>Event Title</h2>
+<div class="event-container" (click)="toggleEvent($event)">
+    <div class="event-icon-container">
+    </div>
+    <h2>{{name}}</h2>
+    <p>{{description}}</p>
 </div>

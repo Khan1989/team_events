@@ -3,8 +3,10 @@
     height: 61px;
     background-color: #5daba0;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 #site-logo {
     line-height: 61px;
+    color: #ffffff;
 }
