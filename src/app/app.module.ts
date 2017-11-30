@@ -10,7 +10,7 @@ import { EventsListItemComponent } from './components/events-list-item/events-li
 
 const appRoutes: Routes = [
   {path: '', component: EventsListComponent},
-  { path: 'event/:name', component: EventComponent }
+  { path: 'events/:name', component: EventComponent }
 ];
 
 @NgModule({
