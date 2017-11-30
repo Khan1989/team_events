@@ -2,17 +2,32 @@
     width: 100%;
     min-height: 80px;
     background: #9e9e9e14;
-    border-bottom: 1px solid #dad6d6;
+    border-bottom: 2px solid #ffffff;
     padding: 15px;
     box-sizing: border-box;
 }
 
 .event-icon-container {
-    width: 50px;
-    height: 50px;
-    float: left;
+    width: 150px;
+    height: 150px;
     border: 1px solid #8080808a;
-    border-radius: 25px;
+    border-radius: 75px;
     margin-right: 10px;
     background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.event-title {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.back-btn {
+    cursor: pointer;
+    padding: 10px;
+    background: #5daba0;
+    border: 1px solid #5daba0;
+    border-radius: 0px;
+    color: #ffffff;
+    font-size: 14px;
 }

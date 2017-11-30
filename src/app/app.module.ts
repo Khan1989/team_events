@@ -5,16 +5,28 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EventsListComponent } from './components/events-list/events-list.component';
 import { EventComponent } from './components/event/event.component';
+import { Routes, RouterModule } from '@angular/router';
+import { EventsListItemComponent } from './components/events-list-item/events-list-item.component';
+
+const appRoutes: Routes = [
+  {path: '', component: EventsListComponent},
+  { path: 'event', component: EventComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     EventsListComponent,
-    EventComponent
+    EventComponent,
+    EventsListItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
