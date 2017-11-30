@@ -15,6 +15,14 @@ export class EventsListComponent implements OnInit {
     {
       "name": "Event Two",
       "description": "The second event of the year."
+    },
+    {
+      "name": "Event Three",
+      "description": "The third event of the year."
+    },
+    {
+      "name": "Event Four",
+      "description": "The fourth event of the year."
     }
   ];
 
