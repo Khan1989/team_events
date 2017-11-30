@@ -8,10 +8,10 @@
 }
 
 .event-icon-container {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border: 1px solid #8080808a;
-    border-radius: 75px;
+    border-radius: 60px;
     margin-right: 10px;
     background-color: #ffffff;
     margin: 0 auto;
