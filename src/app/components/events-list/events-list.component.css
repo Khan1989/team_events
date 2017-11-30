@@ -1,0 +1,13 @@
+.event-create-btn {
+    top: 80px;
+    right: 20px;
+    border: 0px;
+    padding: 10px;
+    border-radius: 0px;
+    position: fixed;
+    cursor: pointer;
+    background: #6abade;
+    font-size: 14px;
+    color: #ffffff;
+    box-shadow: 1px 1px 5px #b7b3b3;
+}
