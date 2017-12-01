@@ -1,7 +1,13 @@
 <div class="event-container">
     <div class="event-icon-container">
     </div>
-    <h2 class="event-title">{{event.name}}</h2>
-    <p>{{description}}</p>
-    <button routerLink="" class="back-btn">Back to Events</button>
+
+    <div class="event-details">
+        <h2 class="event-title">{{event.name}}</h2>
+        <p class="event-description">{{eventDescription}}</p>
+    </div>
+    <div class="back-btn-container">
+        <button routerLink="" class="back-btn">Back to Events</button>
+    </div>
+
 </div>
