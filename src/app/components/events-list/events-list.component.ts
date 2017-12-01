@@ -1,37 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { EventsService } from '../../services/events.service';
 
 @Component({
   selector: 'app-events-list',
   templateUrl: './events-list.component.html',
-  styleUrls: ['./events-list.component.css']
+  styleUrls: ['./events-list.component.css'],
+  providers: [EventsService]
 })
 export class EventsListComponent implements OnInit {
+  events: {name: string, description: string}[] = [];
 
-  events = [
-    {
-      "name": "Event One",
-      "description": "The first event of the calendar."
-    },
-    {
-      "name": "Event Two",
-      "description": "The second event of the year."
-    },
-    {
-      "name": "Event Three",
-      "description": "The third event of the year."
-    },
-    {
-      "name": "Event Four",
-      "description": "The fourth event of the year."
-    }
-  ];
-
-  constructor() { }
+  constructor(private _eventsService: EventsService) { }
 
   ngOnInit() {
-    console.log("check events");
-    console.log(this.events);
-    console.log(this.events[0].name);
+    //get the list of events
+    this.events = this._eventsService.events;
   }
 
 }
