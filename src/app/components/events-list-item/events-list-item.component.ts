@@ -16,7 +16,7 @@ export class EventsListItemComponent implements OnInit {
     }
   
     viewEvent() {
-      console.log("showing event");
+      //navigate to the single event page for the selected event
       this.router.navigate(['events', this.name]);
     }
 }
