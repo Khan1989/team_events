@@ -47,10 +47,13 @@ export class EventsListComponent implements OnInit {
     ]
     this._eventsService.storeEvent(eventData).subscribe(
       response =>  {
-        console.log(response)
+        console.log(response);
+        let theEvents = JSON.parse(response["_body"]);
+        this.events = theEvents;
+        this.createEvent = false;
       },
       error => {
-        console.log(error)
+        console.log(error);
       }
     );
   }
