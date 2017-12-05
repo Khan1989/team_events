@@ -1,5 +1,11 @@
 {
     "HEADER": {
         "TITLE": "Événements de l'entreprise"
+    },
+    "EVENTLIST": {
+        "NEWEVENT": "Nouvel Évènement"
+    },
+    "EVENT": {
+        "BACKTOEVENTS": "Retour aux Évènements"
     }
 }

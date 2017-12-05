@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Headers, Http, Response } from '@angular/http';
+import 'rxjs/Rx';
 
 @Injectable()
 export class EventsService {
@@ -24,15 +26,31 @@ export class EventsService {
       description: "The fourth event of the year."
     }
   ];
-  constructor() { }
+  constructor(private http: Http) { }
 
   // return the data for selected event
   getEventData(eventname) {
-    for (let i = 0; i < this.events.length; i++) {
-      if (eventname === this.events[i].name) {
-        return this.events[i];
-      }
-    }
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.get('http://localhost:3000/singleevent/' + eventname)
+    .map(this.extractData);
+   
+  }
+
+  // save new event to database
+  storeEvent(events: any[]) {
+    let event = events[0];
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post('http://localhost:3000/publish', events, {headers: headers});
+  }
+
+  // get a list of all events
+  getEvents() {
+    return this.http.get('http://localhost:3000/events')
+    .map(this.extractData);
+  }
+
+  private extractData(res: Response) {
+    return res.json();
   }
 
 }

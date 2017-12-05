@@ -27,8 +27,15 @@ export class EventComponent implements OnInit, OnDestroy {
     );
     if (this.event.name) {
       // get the event specific data
-      let eventData = this._eventsService.getEventData(this.event.name);
-      this.eventDescription = eventData.description;
+      this._eventsService.getEventData(this.event.name).subscribe(
+        res => {
+          // set description text
+          this.eventDescription = res.description;
+        },
+        error =>  {
+          console.log(error);
+        }
+      );
     }
 
   }
