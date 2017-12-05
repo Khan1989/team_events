@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {EventsService} from './services/events.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent {
   title = 'app';
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private _eventsService: EventsService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
     

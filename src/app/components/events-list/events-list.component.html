@@ -1,9 +1,23 @@
 <div class="event-list-container">
+    <div class="new-event-editor" *ngIf="createEvent === true">
+        <h1 class="event-create-title">Create Event</h1>
+        <div class="event-details">
+            <div class="title-box">
+                <label for="event-name" class="form-label form-label-title">Title:</label><input type="text" name="event-name" id="event-name">
+            </div>
+            <div class="description-box">
+                <label for="event-description" class="form-label">Description:</label><textarea id="event-description"></textarea>
+            </div>
+        </div>
+        <button class="btn-save" (click)="saveNewEvent()">Save</button>
+        <button class="btn-cancel" (click)="cancelEventCreation()">Cancel</button>
+        <div class="close-icon" (click)="cancelEventCreation()">x</div>
+    </div>
     <div *ngFor="let event of events">
         <app-events-list-item [name]="event.name" [description]="event.description"></app-events-list-item>
     </div>
-    <div>
-        <button class="event-create-btn">New Event</button>
+    <div *ngIf="createEvent === false">
+        <button class="btn-event-create" translate (click)="newEvent()">EVENTLIST.NEWEVENT</button>
     </div>
 
 </div>

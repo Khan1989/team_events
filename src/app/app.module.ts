@@ -11,6 +11,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { EventsService } from './services/events.service';
 
 //AoT (Ahead-of-Time) requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -45,7 +46,7 @@ const appRoutes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
