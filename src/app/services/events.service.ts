@@ -49,6 +49,8 @@ export class EventsService {
     .map(this.extractData);
   }
 
+  
+
   private extractData(res: Response) {
     return res.json();
   }

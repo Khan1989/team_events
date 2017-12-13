@@ -12,6 +12,7 @@ import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { EventsService } from './services/events.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //AoT (Ahead-of-Time) requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     TranslateModule.forRoot({
       loader: {

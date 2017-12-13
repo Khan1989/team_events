@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../../services/events.service';
 import { Response } from '@angular/http';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-events-list',
@@ -10,6 +11,7 @@ import { Response } from '@angular/http';
 export class EventsListComponent implements OnInit {
   events: {name: string, description: string}[] = [];
   createEvent = false;
+  eventAddForm: FormGroup;
 
   constructor(private _eventsService: EventsService) { }
 
@@ -26,7 +28,16 @@ export class EventsListComponent implements OnInit {
         console.log(error);
       }
     );
+
+    this.eventAddForm = new FormGroup({
+      'eventData': new FormGroup({
+        'event-name': new FormControl(null, Validators.required),
+        'event-description': new FormControl(null, Validators.required)
+      })
+    });
   }
+
+  
 
   newEvent() {
     this.createEvent = true;
@@ -37,14 +48,17 @@ export class EventsListComponent implements OnInit {
   }
 
   saveNewEvent() {
-    console.log("saving the new event");
+    let eventName = this.eventAddForm.value.eventData['event-name'];
+    let eventDescription = this.eventAddForm.value.eventData['event-description'];
+    let eventId = "2";
     let eventData = [
       {
-      "id": "10",
-      "name": "Added Event 3",
-      "description": "third event."
+      "id": eventId,
+      "name": eventName,
+      "description": eventDescription
       }
     ]
+
     this._eventsService.storeEvent(eventData).subscribe(
       response =>  {
         console.log(response);
